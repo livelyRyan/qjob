@@ -1,10 +1,17 @@
 {
-  "master节点监听的服务端口": "",
+  "master节点监听的服务端口": "提供资源的增删改查",
   "apiPort": 9999,
 
+  "服务器读超时时间": "单位毫秒",
   "apiReadTimeout": 5000,
+  "服务器写超时时间": "单位毫秒",
   "apiWriteTimeout": 5000,
 
+  "etcd服务端点列表": "格式为`IP:PORT`",
   "etcdEndpoints": ["192.168.44.134:2379"],
-  "etcdDialTimeout": 5000
+  "etcd连接超时时间": "单位毫秒",
+  "etcdDialTimeout": 5000,
+
+  "静态文件资源所在目录": "生产环境中一定要配置成绝对路径",
+  "staticDir": "./webroot"
 }

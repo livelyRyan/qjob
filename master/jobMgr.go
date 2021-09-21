@@ -69,3 +69,16 @@ func (jobMgr *JobMgr) SaveJob(job *common.Job) (*common.Job, error) {
 	}
 	return nil, nil
 }
+
+func (jobMgr *JobMgr) KillJob(jobName string) error {
+	// 创建一个 1 秒过期时间的 lease
+	leaseResp, err := GJobMgr.lease.Grant(context.TODO(), 1)
+	if err != nil {
+		return err
+	}
+	key := common.ETCD_JOB_KILL_DIR + jobName
+
+	// 在 etcd 中存放 key，过期时间是为了节省 etcd 中的空间
+	_, err = GJobMgr.kv.Put(context.TODO(), key, "", clientv3.WithLease(leaseResp.ID))
+	return err
+}

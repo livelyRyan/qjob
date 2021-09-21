@@ -11,6 +11,7 @@ type GlobalConfig struct {
 	ApiWriteTimeout int      `json:"apiWriteTimeout"`
 	EtcdEndpoints   []string `json:"etcdEndpoints"`
 	EtcdDialTimeout int      `json:"etcdDialTimeout"`
+	StaticDir       string   `json:"staticDir"`
 }
 
 var Config *GlobalConfig
