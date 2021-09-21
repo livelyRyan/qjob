@@ -1,0 +1,10 @@
+{
+  "master节点监听的服务端口": "",
+  "apiPort": 9999,
+
+  "apiReadTimeout": 5000,
+  "apiWriteTimeout": 5000,
+
+  "etcdEndpoints": ["192.168.44.134:2379"],
+  "etcdDialTimeout": 5000
+}
